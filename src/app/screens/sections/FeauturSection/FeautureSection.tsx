@@ -54,18 +54,27 @@ export const FeaturesSection = () => {
   return (
     <section className="flex w-full flex-col items-center justify-center gap-12 sm:gap-16 md:gap-24 lg:gap-[120px] mt-4 sm:mt-6 md:mt-8 overflow-hidden">
       {/* Hero / Top Section */}
-      <div className="relative w-full bg-white rounded-[0px_0px_24px_24px] sm:rounded-[0px_0px_36px_36px] md:rounded-[0px_0px_48px_48px]">
-        {/* Left Green Squiggle - Responsive sizes */}
-        <div className="absolute top-[120px] md:top-[140px] left-0 h-[400px] w-[120px] md:h-[550px] md:w-[180px] lg:h-[650px] lg:w-[260px] xl:h-[750px] xl:w-[320px] z-0 pointer-events-none hidden md:block transform -rotate-12 origin-top-left">
-          <img
-            className="w-full h-full object-contain object-left"
-            alt="Decoration"
-            src="https://c.animaapp.com/min8qdk7rRnsOg/img/vector-14.svg"
-          />
+   <div className="relative w-full bg-white rounded-[0px_0px_24px_24px] sm:rounded-[0px_0px_36px_36px] md:rounded-[0px_0px_48px_48px] overflow-hidden">
+      
+      {/* MAIN FLEX CONTAINER */}
+      <div className="flex flex-row w-full relative">
+        
+        {/* 1. LEFT FLEX BOX - Green Squiggle */}
+        {/* FIX: Increased padding-top (pt) on lg and xl screens to push the squiggle down */}
+        <div className="hidden md:flex flex-1 justify-start pt-[140px] md:pt-[160px] lg:pt-[220px] xl:pt-[180px] 2xl:pt-[200px]">
+          <div className="w-full max-w-[200px] lg:max-w-[240px] xl:max-w-[280px] -ml-4 lg:-ml-2 transform -rotate-12 origin-top-left">
+            <img
+              className="w-full h-auto object-contain object-left"
+              alt="Decoration"
+              src="https://c.animaapp.com/min8qdk7rRnsOg/img/vector-14.svg"
+            />
+          </div>
         </div>
 
-        <div className="max-w-[1040px] mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12 relative z-10">
-          <div className="flex flex-col items-center gap-6 animate-fade-in">
+        {/* 2. CENTER FLEX BOX - Main Content */}
+        <div className="flex-[3] z-10 px-4 sm:px-6 py-8 sm:py-10 md:py-12 flex flex-col items-center">
+          
+          <div className="flex flex-col items-center gap-6 animate-fade-in w-full">
             {/* Headline */}
             <h1 className="w-full max-w-[800px] [font-family:'Source_Sans_Pro',Helvetica] font-semibold text-[40px] sm:text-[52px] md:text-[64px] lg:text-[80px] text-center leading-[1.1] text-[#212121]">
               Brewly helps cafés <br />
@@ -109,8 +118,8 @@ export const FeaturesSection = () => {
                 Other on the waiting list
               </div>
 
-              {/* Green Arrow Decoration - Fixed Alignment */}
-              <div className="absolute top-[20px] -right-[150px] hidden md:block w-[140px] pointer-events-none">
+              {/* Green Arrow Decoration */}
+              <div className="absolute top-[20px] -right-[150px] hidden xl:block w-[140px] pointer-events-none">
                 <img
                   className="w-full h-auto transform rotate-6"
                   alt="Arrow"
@@ -131,7 +140,14 @@ export const FeaturesSection = () => {
             </div>
           </div>
         </div>
+
+        {/* 3. RIGHT FLEX BOX - Empty */}
+        <div className="hidden md:flex flex-1">
+          {/* Empty spacer to keep the center column perfectly centered */}
+        </div>
+
       </div>
+    </div>
 
       {/* Feature Cards Section */}
       <div className="flex w-full px-4 sm:px-6 items-start justify-center gap-4 sm:gap-6 flex-wrap animate-fade-in opacity-0 [--animation-delay:400ms] fill-mode-forwards">
